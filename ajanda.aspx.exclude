@@ -1,0 +1,35 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ajanda.aspx.cs" Inherits="ajanda" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+
+    <main>
+
+        <%--<div class="p-3 d-flex align-items-center">
+            <p style="font-size: 21px;font-weight: 500" class="mb-0 pr-3">Ajanda</p>
+            <p style="border-left: 1px solid #d8d8d8;color: rgba(0, 0, 0, .5);font-weight: 500;" class="mb-0 pl-3">Anasayfa</p>
+            <p style="color: rgba(0, 0, 0, .5);font-weight: 500" class="mb-0 pl-2 pr-2">></p>
+            <p style="color: rgba(0, 0, 0, .7);font-weight: 500" class="mb-0">Ajanda</p>
+        </div>--%>
+
+        <div class="p-3">
+
+
+
+            <div class="pl-0 pr-0 col-md-10 bgc-6 pt-4">
+                <h5 class="bgc-6-h5 pl-4 mb-3">Ajanda</h5>
+
+                <div class="p-4" id='calendar'></div>
+
+            </div>
+
+
+
+        </div>
+    </main>
+
+
+</asp:Content>
+

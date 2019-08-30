@@ -1,0 +1,71 @@
+﻿.cricle-b-icon {
+    position: relative;
+    background: transparent;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+.tripleIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 2px;
+    width: 23px;
+    background: rgb(85, 85, 85);
+    border-radius: 2px;
+}
+.tripleIcon:before, .tripleIcon:after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 23px;
+    background: rgba(85, 85, 85);
+    border-radius: 2px;
+    transition: .5s;
+}
+.tripleIcon:before{
+    top: -7px;
+}
+.tripleIcon:after {
+    top: 7px;
+}
+
+.cricle-b-icon.t-active .tripleIcon{
+    background: rgba(0, 0, 0, 0);
+}
+
+.cricle-b-icon.t-active .tripleIcon:before{
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.cricle-b-icon.t-active .tripleIcon:after{
+    top: 0;
+    transform: rotate(135deg);
+}
+
+.menu-bgc-2{
+    transition: .5s;
+}
+
+.menu-bgc-2.a-active {
+    width: 0;
+}
+
+.liText-d-b {
+    display: block;
+    transition: .5s;
+}
+
+.liText-d-b.li-active {
+    display: none;
+}
+
+main {
+    transition: .5s;
+}
+
+main.m-active {
+    margin-left: 0;
+}

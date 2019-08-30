@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Data;
+
+public partial class SatisTemsilciDegisim : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {            
+
+        if (!Convert.ToInt32(Session["kulid"]).Equals(12))
+        {
+            Response.Redirect("Default.aspx");
+        }
+        else
+        {
+            RPT_SATIS_GUNCELLEME.DataSource = DBIslem.DtGetir("SELECT View_Satis.sSOZLESME_TARIH , mAD , mSOYAD , fTOPLAMFIYAT , TBL_KULLANICI.kKULLANICIADI from View_Satis inner join TBL_SOZLESME on View_Satis.sID = TBL_SOZLESME.sID inner join TBL_KULLANICI on TBL_SOZLESME.sKULID = TBL_KULLANICI.kID ");
+            RPT_SATIS_GUNCELLEME.DataBind();
+            
+        }
+    }
+
+
+
+    protected void RPT_SATIS_GUNCELLEME_ItemDataBound(object sender, RepeaterItemEventArgs e)
+    {
+        DropDownList SatisciDDL = (DropDownList)e.Item.FindControl("DDL_Satisci");
+        DataRowView dr = (DataRowView)e.Item.DataItem;
+        string strcarrierName = Convert.ToString(dr["kKULLANICIADI"]);       
+        SatisciDDL.DataSource = DBIslem.DtGetir("select kKULLANICIADI,kID from TBL_KULLANICI");      
+        SatisciDDL.DataTextField = "kKULLANICIADI";       
+        SatisciDDL.DataValueField = "kID";       
+        SatisciDDL.DataBind();
+        SatisciDDL.Items.Insert(0, new ListItem(strcarrierName, "0"));
+    }
+}

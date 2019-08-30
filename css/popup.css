@@ -1,0 +1,94 @@
+﻿.popup-nw {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 30;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, .1);
+}
+
+.popup1 {
+    height: 300px;
+    width: 30%;
+    position: relative;
+}
+
+.popup-card {
+    height: 100%;
+    width: 100%;
+    border: 1px solid #efefef;
+    background: #ffffff;
+    align-items: center;
+}
+
+.popup-card1 {
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-c-header {
+    padding: 15px 20px;
+    background: white;
+    border-bottom: 1px solid #dfdfdf;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+              
+}
+
+.popup-c-body {
+    display: block;
+    padding: 20px;
+    display: flex;
+    flex: 1 0 auto;
+}
+
+.popup-c-footer {
+    padding: 15px 20px;
+    background: white;
+    border-top: 1px solid #dfdfdf;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.popup-c-header-h3 {
+    font-size: 17px;
+    font-weight: 600;
+    vertical-align: middle; 
+}
+
+.closeIcon {
+    background: none;
+    border: none;
+    position: absolute;
+    font-size: 25px;
+    text-align: center;
+    top: 5px;
+    right: 15px;
+    z-index: 50;
+    cursor: pointer;
+}
+
+.closeIcon:focus {
+    outline: none;
+}
+
+.closeIconx {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1;
+    color: rgba(0, 0, 0, .7);
+    text-shadow: 0 1px 0 #fff;
+}
+
+.closeIconx:hover {
+    color: rgba(0, 0, 0, 1);
+}
+
+.btn-sm:focus {
+    outline: none;
+}

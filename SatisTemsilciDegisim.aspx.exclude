@@ -1,0 +1,57 @@
+﻿<%@ Page Title="Satış Temsilcisi Değişim" MasterPageFile="~/MasterPage.master" Language="C#" AutoEventWireup="true" CodeFile="SatisTemsilciDegisim.aspx.cs" Inherits="SatisTemsilciDegisim" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <main>
+<div class="mt-4 pt-4 pb-1 table-bgc">
+            <h5 class="pl-3 pt-1 pb-1 table-bgc-h5">Ödenen Senet Listesi</h5>
+            <!-- <p class="pl-3 mb-4 table-bgc-p">Tüm müşteri görüşme detay listesine ulaşabilirsiniz.</p> -->
+
+            <div class="m-4 pt-2">
+                <table id="mytrtable4" class="table table-bordered">
+                    <thead class="theader-text">
+                        <tr>
+                            <th>SÖZLEŞME TARİHİ</th>
+                            <th>AD SOYAD</th>
+                            <th>SOZLESME FİYATI</th>
+                            <th>SATIŞ TEMSİLCİSİ</th>        
+                            <th>DEĞİŞTİRİLECEK TEMSİLCİ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <asp:Repeater ID="RPT_SATIS_GUNCELLEME" runat="server" OnItemDataBound="RPT_SATIS_GUNCELLEME_ItemDataBound">
+                            <ItemTemplate>
+                                <tr>
+                                    <td><%# Eval("sSOZLESME_TARIH") %></td>
+                                    <td><%# Eval("mAD") + " " + Eval("mSOYAD") %>  </td>
+                                    <td><%# Eval("fTOPLAMFIYAT") %></td>
+                                    <td id="kulid" runat="server"><%# Eval("kKULLANICIADI") %></td>
+                                    <td>
+                                        <asp:DropDownList runat="server" ID="DDL_Satisci"  >
+                                            
+                                        </asp:DropDownList>
+
+                                    </td>
+                                    
+
+                                </tr>
+                              
+                            </ItemTemplate>
+                        </asp:Repeater>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </main>
+     
+</asp:Content>
+
+
+
+    
+
+

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trio Garden | Admin</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/selectOptions.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+</head>
+<body>
+
+    <header>
+        <div class="navbar nav-bgc p-3 w-100">
+            <div class="ml-3">
+                <a href="index.html">
+                    <img src="img/logo/triologosiyah90.png" height="50" alt="">
+                </a>
+            </div>
+            <div class="d-flex align-items-center">
+
+                <div class="dropdown mr-3">
+                    <button class="btn-1 btnIcons" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-comments"></i>
+                    </button>
+                    <div class="dropdown-menu message-a" aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-header message-h pb-3 border-bottom-1">Mesaj</div>
+                        <a class="dropdown-item dih d-flex align-items-center pt-3 pb-3 pl-4 pr-4 border-bottom-1" href="#">
+                            <img class="message-avatar mr-2" src="img/avatar/img_avatar.png">
+                            <div class="w-100">
+                                <div class="row m-0">
+                                    <h6 class="mb-0 message-h6">Faruk Bozkus</h6>
+                                    <texttime class="ml-auto message-time">16.30</texttime>
+                                </div>
+                                <p class="pt-1 message-p">Selam Marhaba sssss ???!!...</p>
+                            </div>
+                        </a>
+                        <a class="dropdown-item dih d-flex align-items-center pt-3 pb-3 pl-4 pr-4 border-bottom-1" href="#">
+                            <img class="message-avatar mr-2" src="img/avatar/img_avatar.png">
+                            <div class="w-100">
+                                <div class="row m-0">
+                                    <h6 class="mb-0 message-h6">Faruk Bozkus</h6>
+                                    <texttime class="ml-auto message-time">16.30</texttime>
+                                </div>
+                                <p class="pt-1 message-p">Selam Marhaba sssss ???!!...</p>
+                            </div>
+                        </a>
+                        <a class="dropdown-item dih d-flex align-items-center pt-3 pb-3 pl-4 pr-4 border-bottom-1" href="#">
+                            <img class="message-avatar mr-2" src="img/avatar/img_avatar.png">
+                            <div class="w-100">
+                                <div class="row m-0">
+                                    <h6 class="mb-0 message-h6">Faruk Bozkus</h6>
+                                    <texttime class="ml-auto message-time">16.30</texttime>
+                                </div>
+                                <p class="pt-1 message-p">Selam Marhaba sssss ???!!...</p>
+                            </div>
+                        </a>
+                        <a class="dropdown-item dih pt-3 pb-3 message-footer borderRadiusLattest" href="#">Tümünü Bak</a>
+                    </div>
+                </div>
+
+                <div class="dropdown mr-3">
+                    <button class="btn-1 btnIcons" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-bell"></i>
+                    </button>
+                    <div class="dropdown-menu noth-a" aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-header noth-h pb-3 border-bottom-1">Bildirim</div>
+                        <a class="dropdown-item dih d-flex align-items-center pt-3 pb-3 pl-4 pr-4 border-bottom-1" href="#">
+                            <div class="w-100">
+                                <div class="row m-0">
+                                    <i class="fa fa-bell mr-2 text-primary"></i>
+                                    <h6 class="mb-0 noth-h6 text-primary">Hafta güncelleme</h6>
+                                    <texttime class="ml-auto noth-time">16.30</texttime>
+                                </div>
+                                <p class="pt-1 noth-p">satışları değişmesine güncellenmiştir...</p>
+                            </div>
+                        </a>
+                        <a class="dropdown-item dih d-flex align-items-center pt-3 pb-3 pl-4 pr-4 border-bottom-1" href="#">
+                            <div class="w-100">
+                                <div class="row m-0">
+                                    <i class="fa fa-exclamation-triangle mr-2 text-danger"></i>
+                                    <h6 class="mb-0 noth-h6 text-danger">Table hatası</h6>
+                                    <texttime class="ml-auto noth-time">16.30</texttime>
+                                </div>
+                                <p class="pt-1 noth-p">satışları değişmesine çalışmıyor...</p>
+                            </div>
+                        </a>
+                        <a class="dropdown-item dih d-flex align-items-center pt-3 pb-3 pl-4 pr-4 border-bottom-1" href="#">
+                            <div class="w-100">
+                                <div class="row m-0">
+                                    <i class="fa fa-bell mr-2 text-success"></i>
+                                    <h6 class="mb-0 noth-h6 text-success">Aylık görüşme</h6>
+                                    <texttime class="ml-auto noth-time">16.30</texttime>
+                                </div>
+                                <p class="pt-1 noth-p">satışları değişmesine güncellenmiştir...</p>
+                            </div>
+                        </a>
+                        <a class="dropdown-item noth-footer dih pt-3 pb-3 borderRadiusLattest" href="#">Tümünü Bak</a>
+                    </div>
+                </div>
+
+                <div class="dropdown mr-5">
+                    <button class="btn-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="avatar-img" src="img/avatar/img_avatar.png" alt="">
+                    </button>
+                    <div class="dropdown-menu avatar-a" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item aText2 pt-2 pb-2" href="#">
+                            Profil
+                        </a>
+                        <a class="dropdown-item aText2 pt-2 pb-2" href="#">
+                            Hesab ayarlar
+                        </a>
+                        <a class="dropdown-item aText2 d-flex align-items-center pt-2 pb-2" href="#">
+                            Gelen
+                            <span class="badge badge-primary ml-auto p-1">3</span>
+                        </a>
+                        <a class="dropdown-item aText2 d-flex align-items-center pt-2 pb-3 border-bottom-1" href="#">
+                            Mesaj
+                            <span class="badge badge-success ml-auto p-1">8</span>
+                        </a>
+                        <a class="dropdown-item aText2 pt-3 pb-3 borderRadiusLattest" href="#">
+                            Çıkış
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-bgc-2">
+            <ul class="pl-0 pt-3">
+                <li class="liText">
+                    <a class="nav-link aText" href="musteriKayit.html">Müşteri Kayıt ve Liste</a>
+                </li>
+                <li class="liText">
+                    <a class="nav-link aText" href="musteriSozlesme.html">Sözleşme Hazırla</a>
+                </li>                
+            </ul>
+        </div>
+
+    </header>
+
+    <main>
+        <div class="p-3">
+            <div class="col-md-12 bgc-1 p-5 text-center">
+                <h2 class="text-light fw-600">Nasıl yardımcı olabilirim?</h2>
+                <div class="col-md-8 ml-auto mr-auto pt-3">
+                    <div class="select_mate" data-mate-select="active">
+                        <select name="" onchange="" onclick="return false;" id="">
+                            <option value="">Seçiniz.... </option>
+                            <option value="1">asdasdas </option>
+                            <option value="2">adsadasdsad</option>
+                            <option value="3">adsadsadsa</option>
+                        </select>
+                        <p class="selecionado_opcion" onclick="open_select(this)"></p>
+                        <span onclick="open_select(this)" class="icon_select_mate">
+                            <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24">
+                                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
+                                <path d="M0-.75h24v24H0z" fill="none" />
+                            </svg>
+                        </span>
+                        <div class="cont_list_select_mate">
+                            <ul class="cont_select_int"> </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 mt-95 d-flex justify-content-center ml-auto mr-auto">
+                    <a href="#" class="nav-link aText1 nav-link-padding">#Sözleşme</a>
+                    <a href="#" class="nav-link aText1 nav-link-padding">#Müşteri</a>
+                    <a href="#" class="nav-link aText1 nav-link-padding">#Randevu talep</a>
+                    <a href="#" class="nav-link aText1 nav-link-padding">#Görüşme</a>
+                    <a href="#" class="nav-link aText1 nav-link-padding">#Raporlar</a>
+                </div>
+            </div>
+
+            <div class="mt-4 col-md-12 p-5 bgc-2">
+                <div class="row d-flex justify-content-between">
+                    <div class="col mr-5">
+                        <div class="row d-flex align-items-center">
+                            <div class="p-4 d-flex align-items-center h-100 card-red">
+                                <i class="fas fa-user-friends text-white fa-3x"></i>
+                            </div>
+                            <div class="p-5 col text-center bgcard-w">
+                                <h4>88,665</h4>
+                                <h6 class="h6-text">Görüşmeler</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mr-5">
+                        <div class="row d-flex align-items-center">
+                            <div class="p-4 d-flex align-items-center h-100 card-yellow">
+                                <i class="fas fa-chart-line text-white fa-3x"></i>
+                            </div>
+                            <div class="p-5 col text-center bgcard-w">
+                                <h4>88,665</h4>
+                                <h6 class="h6-text">Satışlar</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row d-flex align-items-center">
+                            <div class="p-4 d-flex align-items-center h-100 card-purple">
+                                <i class="fas fa-users text-white fa-3x"></i>
+                            </div>
+                            <div class="p-5 col text-center bgcard-w">
+                                <h4>88,665</h4>
+                                <h6 class="h6-text">Müşterİler</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4 pt-4 pb-1 table-bgc">
+                <h5 class="pl-3 pt-1 pb-1 table-bgc-h5">Müşteri Görüşme Listesi</h5>
+                <!-- <p class="pl-3 mb-4 table-bgc-p">Tüm müşteri görüşme detay listesine ulaşabilirsiniz.</p> -->
+
+                <div class="m-4 pt-2">
+                    <table id="mytrtable" class="table table-bordered">
+                        <thead class="theader-text">
+                            <th>
+                                Ad
+                            </th>
+                            <th>
+                                Soyad
+                            </th>
+                            <th>
+                                Email
+                            </th>
+                            <th>
+                                Telefon Numarası
+                            </th>
+                            <th>
+                                İlk Görüşme
+                            </th>
+                            <th>
+                                Randevu
+                            </th>
+                            <th>
+                                Mevki
+                            </th>
+                            <th>
+                                Liste Fiyatı
+                            </th>
+                            <th>
+                                Verilen Teklif
+                            </th>
+                            <th>
+                                Sözleşme
+                            </th>
+                        </thead>
+                        <tbody class="tbody-text">
+                            <tr>
+                                <td>
+                                    Faruk
+                                </td>
+                                <td>
+                                    Faruk
+                                </td>
+                                <td>
+                                    Faruk
+                                </td>
+                                <td>
+                                    Faruk asdasd adsa das dsadsa sa das das
+                                </td>
+                                <td>
+                                    Faruk dsadasdsadsadasdsadas
+                                </td>
+                                <td>
+                                    Faruk sadsa dasd as
+                                </td>
+                                <td>
+                                    Faruk sa das dsa das as as
+                                </td>
+                                <td>
+                                    Faruk das dsa dsa
+                                </td>
+                                <td>
+                                    Faruk
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <i class="fa fa-file-signature fa-2x td-contract"></i>
+                                    </a>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="mt-4 pt-4 pb-1 table-bgc">
+                <h5 class="pl-3 pt-1 pb-1 table-bgc-h5">Müşteri Görüşme Listesi</h5>
+                <!-- <p class="pl-3 mb-4 table-bgc-p">Tüm müşteri görüşme detay listesine ulaşabilirsiniz.</p> -->
+
+                <div class="m-4 pt-2">
+                    <table id="mytrtable2" class="table table-bordered">
+                        <thead class="theader-text">
+                            <th>
+                                Ad
+                            </th>
+                            <th>
+                                Soyad
+                            </th>
+                            <th>
+                                Email
+                            </th>
+                            <th>
+                                Telefon Numarası
+                            </th>
+                            <th>
+                                İlk Görüşme
+                            </th>
+                            <th>
+                                Randevu
+                            </th>
+                            <th>
+                                Mevki
+                            </th>
+                            <th>
+                                Liste Fiyatı
+                            </th>
+                            <th>
+                                Verilen Teklif
+                            </th>
+                            <th>
+                                Sözleşme
+                            </th>
+                        </thead>
+                        <tbody class="tbody-text">
+                            <tr>
+                                <td>
+                                    Faruk
+                                </td>
+                                <td>
+                                    Faruk
+                                </td>
+                                <td>
+                                    Faruk
+                                </td>
+                                <td>
+                                    Faruk asdasd adsa das dsadsa sa das das
+                                </td>
+                                <td>
+                                    Faruk dsadasdsadsadasdsadas
+                                </td>
+                                <td>
+                                    Faruk sadsa dasd as
+                                </td>
+                                <td>
+                                    Faruk sa das dsa das as as
+                                </td>
+                                <td>
+                                    Faruk das dsa dsa
+                                </td>
+                                <td>
+                                    Faruk
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <i class="fa fa-file-signature fa-2x td-contract"></i>
+                                    </a>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+    <script src="js/selectOptions.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.bootstrap4.min.js"></script>
+    <script src="js/dataTables-Turkish.js"></script>
+
+
+</body>
+
+</html>

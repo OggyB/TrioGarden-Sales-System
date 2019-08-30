@@ -1,0 +1,791 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <title>Trio Garden Müşteri Yönetim</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/logo/triologosiyah90.png" />
+    <link rel="stylesheet" href="css/bootstrap.min1.css" />
+    <link rel="stylesheet" href="css/style1.css" />
+    <link rel="stylesheet" href="css/selectOptions.css" />
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="css/clickedShow.css" />
+    <link rel="stylesheet" href="css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="css/date-ui.css" />
+    <link href="css/fullcalendar.min.css" rel="stylesheet" />
+    <link href="css/fullcalendar.print.css" rel="stylesheet" media="print" />
+    <link href="css/ajanda.css" rel="stylesheet" />
+    <link href="css/popup.css" rel="stylesheet" />
+    <link href="css/menu-icon.css" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous" />
+
+    <style>
+        .bgc-7 {
+            background: #fff;
+            box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, .1);
+            border-radius: 5px;
+        }
+
+        .bgc-7-h5 {
+            border-left: 2px solid #3dba6f;
+            font-size: 17px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, .8);
+        }
+
+        .bloked-kirmizi {
+            background-color: #ff7676;
+            color: rgba(255, 255, 255, .9);
+        }
+
+            .bloked-kirmizi:focus {
+                border: 1px solid #ff7676;
+            }
+
+        .basarili-yesil {
+            background-color: #36b336;
+            color: white;
+        }
+
+            .basarili-yesil:focus {
+                border: 1px solid #36b336;
+            }
+
+        .fw-500 {
+            font-weight: 500;
+        }
+
+
+        #dropdownMenuButton {
+            width: 27px;
+        }
+    </style>
+    <style>
+        .noth-a {
+            width: 500px;
+            left: -378px;
+        }
+
+        .bill-icon {
+            background-image: url(img/icons/bill.svg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            height: 20px;
+            width: 20px;
+        }
+        .pswdChng-abs {
+            position:absolute;
+            top:-20px;
+            right:-20px;
+            background:#ff7676;
+            padding:5px 10px;
+            margin-right:15px;
+            border-radius:3px;
+            color:#fff;
+            font-size:12px;
+        }
+
+        .bildirim-scroll-y {
+            overflow-y: scroll;
+            height: 45vh;
+        }
+
+        .bildirim-scroll-y::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .bildirim-scroll-y::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+
+        .bildirim-scroll-y::-webkit-scrollbar-thumb {
+            /*background: #0073b7;*/
+            background: #7a86ff;
+        }
+
+        .bildirim-scroll-y::-webkit-scrollbar-thumb:hover {
+            /*background: #004872;*/
+            background: #616fff;
+        }
+
+        .dropdown-menu {
+                box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, .2);
+        }
+        .border-top-1{
+            border-top:1px solid rgba(0, 0, 0, .1);
+        }
+
+        .tblTdss{
+            font-size:12px;
+            font-weight:500;
+        }
+    </style>
+
+</head>
+<%--<body style="background: #f4f6f9;">
+    <form id="form1" runat="server">
+
+        <header>
+        <div class="navbar nav-bgc p-3 w-100">
+            <div class="ml-3">
+                <a href="Default.aspx">
+                    <img src="img/logo/triologosiyah90.png" height="50" alt="">
+                </a>
+            </div>
+            <div class="d-flex align-items-center">
+
+                <div class="dropdown mr-3">
+                    <button class="btn-1 btnIcons" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-comments"></i>
+                    </button>
+                    <div class="dropdown-menu message-a" aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-header message-h pb-3 border-bottom-1">Mesaj</div>
+                        <a class="dropdown-item dih d-flex align-items-center pt-3 pb-3 pl-4 pr-4 border-bottom-1" href="#">
+                            <img class="message-avatar mr-2" src="img/avatar/img_avatar.png">
+                            <div class="w-100">
+                                <div class="row m-0">
+                                    <h6 class="mb-0 message-h6">Faruk Bozkus</h6>
+                                    <texttime class="ml-auto message-time">16.30</texttime>
+                                </div>
+                                <p class="pt-1 message-p">Selam Marhaba sssss ???!!...</p>
+                            </div>
+                        </a>
+                        <a class="dropdown-item dih d-flex align-items-center pt-3 pb-3 pl-4 pr-4 border-bottom-1" href="#">
+                            <img class="message-avatar mr-2" src="img/avatar/img_avatar.png">
+                            <div class="w-100">
+                                <div class="row m-0">
+                                    <h6 class="mb-0 message-h6">Faruk Bozkus</h6>
+                                    <texttime class="ml-auto message-time">16.30</texttime>
+                                </div>
+                                <p class="pt-1 message-p">Selam Marhaba sssss ???!!...</p>
+                            </div>
+                        </a>
+                        <a class="dropdown-item dih d-flex align-items-center pt-3 pb-3 pl-4 pr-4 border-bottom-1" href="#">
+                            <img class="message-avatar mr-2" src="img/avatar/img_avatar.png">
+                            <div class="w-100">
+                                <div class="row m-0">
+                                    <h6 class="mb-0 message-h6">Faruk Bozkus</h6>
+                                    <texttime class="ml-auto message-time">16.30</texttime>
+                                </div>
+                                <p class="pt-1 message-p">Selam Marhaba sssss ???!!...</p>
+                            </div>
+                        </a>
+                        <a class="dropdown-item dih pt-3 pb-3 message-footer borderRadiusLattest" href="#">Tümünü Bak</a>
+                    </div>
+                </div>
+
+                <div class="dropdown mr-3">
+                    <button class="btn-1 btnIcons" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-bell"></i>
+                    </button>
+                    <div class="dropdown-menu noth-a" aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-header noth-h pb-3 border-bottom-1">Bildirim</div>
+                        <a class="dropdown-item dih d-flex align-items-center pt-3 pb-3 pl-4 pr-4 border-bottom-1" href="#">
+                            <div class="w-100">
+                                <div class="row m-0">
+                                    <i class="fa fa-bell mr-2 text-primary"></i>
+                                    <h6 class="mb-0 noth-h6 text-primary">Hafta güncelleme</h6>
+                                    <texttime class="ml-auto noth-time">16.30</texttime>
+                                </div>
+                                <p class="pt-1 noth-p">satışları değişmesine güncellenmiştir...</p>
+                            </div>
+                        </a>
+                        <a class="dropdown-item dih d-flex align-items-center pt-3 pb-3 pl-4 pr-4 border-bottom-1" href="#">
+                            <div class="w-100">
+                                <div class="row m-0">
+                                    <i class="fa fa-exclamation-triangle mr-2 text-danger"></i>
+                                    <h6 class="mb-0 noth-h6 text-danger">Table hatası</h6>
+                                    <texttime class="ml-auto noth-time">16.30</texttime>
+                                </div>
+                                <p class="pt-1 noth-p">satışları değişmesine çalışmıyor...</p>
+                            </div>
+                        </a>
+                        <a class="dropdown-item dih d-flex align-items-center pt-3 pb-3 pl-4 pr-4 border-bottom-1" href="#">
+                            <div class="w-100">
+                                <div class="row m-0">
+                                    <i class="fa fa-bell mr-2 text-success"></i>
+                                    <h6 class="mb-0 noth-h6 text-success">Aylık görüşme</h6>
+                                    <texttime class="ml-auto noth-time">16.30</texttime>
+                                </div>
+                                <p class="pt-1 noth-p">satışları değişmesine güncellenmiştir...</p>
+                            </div>
+                        </a>
+                        <a class="dropdown-item noth-footer dih pt-3 pb-3 borderRadiusLattest" href="#">Tümünü Bak</a>
+                    </div>
+                </div>
+
+                <div class="dropdown mr-2">
+                    <button class="btn-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="avatar-img" src="img/avatar/img_avatar.png" alt="">
+                    </button>
+                    <div class="dropdown-menu avatar-a" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item aText2 pt-2 pb-2" href="#">
+                            Profil
+                        </a>
+                        <a class="dropdown-item aText2 pt-2 pb-2" href="#">
+                            Hesab ayarlar
+                        </a>
+                        <a class="dropdown-item aText2 d-flex align-items-center pt-2 pb-2" href="#">
+                            Gelen
+                            <span class="badge badge-primary ml-auto p-1">3</span>
+                        </a>
+                        <a class="dropdown-item aText2 d-flex align-items-center pt-2 pb-3 border-bottom-1" href="#">
+                            Mesaj
+                            <span class="badge badge-success ml-auto p-1">8</span>
+                        </a>
+                        <a class="dropdown-item aText2 pt-3 pb-3 borderRadiusLattest" href="girisYap.aspx">
+                            Çıkış
+                        </a>
+                    </div>
+                </div>
+                <div class="mr-2">
+                    <span class="hidden-xs">
+    <asp:Label ID="lblKullanici" runat="server" Text=""></asp:Label>
+                </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-bgc-2">
+            <ul class="pl-0 pt-3">
+                <li class="liText">
+                    <a class="nav-link aText" href="musteriKayit.aspx">Müşteri Kayıt ve Liste</a>
+                </li>
+                <li class="liText">
+                    <a class="nav-link aText" href="musteriGorusmeListesi.aspx">Müşteri Görüşme Listesi</a>
+                </li>
+                <li class="liText">
+                    <a class="nav-link aText" href="musteriSozlesmeListesi.aspx">Müşteri Sözleşme Listesi</a>
+                </li>           
+                 <li class="liText">
+                     <a class="nav-link aText" href="Ajanda.aspx">Ajanda</a>
+                     </li>     
+            </ul>
+        </div>
+
+    </header>
+    
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+        <script type="text/JavaScript" src="./js/selectOptions.js"></script>    
+    <script src="js/jquery.3.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/JavaScript" src="js/jquery.dataTables.min.js"></script>
+    <script type="text/JavaScript" src="js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/JavaScript" src="js/dataTables-Turkish.js"></script>
+    <script type="text/JavaScript" src="js/clickshowch.js"></script>
+    <script type="text/JavaScript" src="js/jquery.mask.min.js"></script>
+        <script>
+            $('.money').mask("#.##0,00", { reverse: true });
+
+            //$(".mnyChange").change(function () {
+            //    var selected = $(this).val();
+            //    if (selected === "Euro" || selected === "USD") {
+            //        $('.money').mask("#,##0.00", { reverse: true });
+
+            //    } else {
+            //        $('.money').mask("#.##0,00", { reverse: true });
+            //    }
+            //});
+
+            //$(".paraBirikimi").on(function () {
+            //    var chngMoney = $(this).text();
+            //    if (chngMoney === "Euro") {
+            //        $('.money').mask("#,##0.00", { reverse: true });
+            //    } else {
+            //        $('.money').mask("#.##0,00", { reverse: true });
+            //    }
+            //});
+
+
+        </script>        
+        <script src="js/jquery-ui.min.js"></script>
+        <script>
+            $(function () {
+                $(".tarih").datepicker({
+                    changeMonth: true,
+                    changeYear: true,
+                    yearRange: '2018:2030',
+                    monthNames: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos",
+                        "Eylül", "Ekim", "Kasım", "Aralık"],
+                    monthNamesShort: ['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki',
+                        'Kas', 'Ara'],
+                    dayNamesMin: ["Pa", "Pt", "Sl", "Ça", "Pe", "Cu", "Ct"],
+                    dateFormat: 'dd.mm.yy',
+                    firstDay: 1
+                });
+            });
+    </script>
+
+        <script src="js/jQuery.print.min.js"></script>
+        <script src="js/fullcalendar.min.js"></script>
+        <script src="js/calendar-tr.js"></script>
+        <script src="js/ajanda-data.js"></script>
+    </form>
+</body>--%>
+<body style="background: #f4f6f9;">
+    <form id="form1" runat="server">
+
+        <header>
+            <div class="navbar nav-bgc p-3 w-100">
+                <div class="ml-3">
+                    <a href="Default.aspx">
+                        <img src="img/logo/triologosiyah90.png" height="50" alt="">
+                    </a>
+                </div>
+                <div class="mr-auto ml-5">
+                <div class="cricle-b-icon">
+                    <div class="tripleIcon">
+                    </div>
+                </div>
+            </div>
+                <div class="d-flex align-items-center">
+
+                    <div class="dropdown mr-3">
+                        <%--  <button class="btn-1 btnIcons" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-comments"></i>
+                    </button>--%>
+                        <%--<div class="dropdown-menu message-a" aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-header message-h pb-3 border-bottom-1">Mesaj</div>
+                        <a class="dropdown-item dih d-flex align-items-center pt-3 pb-3 pl-4 pr-4 border-bottom-1" href="#">
+                            <img class="message-avatar mr-2" src="img/avatar/img_avatar.png">
+                            <div class="w-100">
+                                <div class="row m-0">
+                                    <h6 class="mb-0 message-h6">Faruk Bozkus</h6>
+                                    <texttime class="ml-auto message-time">16.30</texttime>
+                                </div>
+                                <p class="pt-1 message-p">Selam Marhaba sssss ???!!...</p>
+                            </div>
+                        </a>
+                        <a class="dropdown-item dih d-flex align-items-center pt-3 pb-3 pl-4 pr-4 border-bottom-1" href="#">
+                            <img class="message-avatar mr-2" src="img/avatar/img_avatar.png">
+                            <div class="w-100">
+                                <div class="row m-0">
+                                    <h6 class="mb-0 message-h6">Faruk Bozkus</h6>
+                                    <texttime class="ml-auto message-time">16.30</texttime>
+                                </div>
+                                <p class="pt-1 message-p">Selam Marhaba sssss ???!!...</p>
+                            </div>
+                        </a>
+                        <a class="dropdown-item dih d-flex align-items-center pt-3 pb-3 pl-4 pr-4 border-bottom-1" href="#">
+                            <img class="message-avatar mr-2" src="img/avatar/img_avatar.png">
+                            <div class="w-100">
+                                <div class="row m-0">
+                                    <h6 class="mb-0 message-h6">Faruk Bozkus</h6>
+                                    <texttime class="ml-auto message-time">16.30</texttime>
+                                </div>
+                                <p class="pt-1 message-p">Selam Marhaba sssss ???!!...</p>
+                            </div>
+                        </a>
+                        <a class="dropdown-item dih pt-3 pb-3 message-footer borderRadiusLattest" href="#">Tümünü Bak</a>
+                    </div>--%>
+                    </div>
+
+                    <div class="dropdown mr-3">
+                        <button class="btn-1 btnIcons" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-bell"></i>
+                        </button>
+                        <div class="dropdown-menu noth-a" aria-labelledby="dropdownMenuButton">
+                            <div class="dropdown-header noth-h pb-3 border-bottom-1">Bildirim</div>
+
+                            <div class="bildirim-scroll-y">
+                            <asp:Repeater ID="RPT_BİLDİRİMLER" runat="server">
+                                <ItemTemplate>
+                                    <a class="dropdown-item dih d-flex align-items-center pt-3 pb-3 pl-4 pr-4 border-bottom-1" href="#">
+                                        <div class="row m-0">
+                                            <div class="d-flex col-12 p-0">
+                                              
+                                                  
+                                                <i class=" <%# (Convert.ToInt32(Eval("KALAN_GUN")) <= 0) ? "fa fa-exclamation-triangle mr-2 text-danger" : "fa fa-bell mr-2 text-success" %>"></i>
+                                                
+                                                 
+                                                
+
+
+
+                                               <%-- <%# (DataBinder.Eval(Container.DataItem,"ExtendedProperties['ShowDetail']")) == null ? "show showdetail" : ( (bool)(DataBinder.Eval(Container.DataItem,"ExtendedProperties['ShowDetail']")) == true ?  "showdetail hide" : "show showdetail ") %>--%>
+                                                <h6 id="asd" class="mb-0 message-h6"><%# Eval("AD_SOYAD") %></h6>
+                                                <texttime class="ml-auto noth-time"><%# Eval("TARIH") %></texttime>
+                                            </div>
+                                            <div class="col-12 d-flex p-0">
+                                                <p class="pt-1 noth-p"><%# Eval("TUTAR") %> <%# Eval("PARA_BIRIMI") %> tutarında senet borcu bulunmaktadır. </p>
+                                                <p class="pt-1 noth-p ml-auto">Kalan gün :
+                                                    <p style="margin-bottom: 0px;" class="noth-p pl-1 pt-1"><%#Eval("KALAN_GUN") %></p>
+                                                    </p>
+
+                                            </div>
+                                        </div>
+
+                                    </a>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                            </div>
+
+
+                            <a class="dropdown-item border-top-1 noth-footer dih pt-3 pb-3 borderRadiusLattest" href="BorcListe.aspx">Tümünü Bak</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown mr-2">
+                        <button class="btn-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="avatar-img" src="img/avatar/img_avatar.png" alt="">
+                        </button>
+                        <div class="dropdown-menu avatar-a" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item aText2 pt-2 pb-2" href="MusteriProfil.aspx">Profil
+                            </a>
+                            <%--   <a class="dropdown-item aText2 pt-2 pb-2" href="#">
+                            Hesab ayarlar
+                        </a>--%>
+                            <%--  <a class="dropdown-item aText2 d-flex align-items-center pt-2 pb-2" href="#">
+                            Gelen
+                            <span class="badge badge-primary ml-auto p-1">3</span>
+                        </a>
+                        <a class="dropdown-item aText2 d-flex align-items-center pt-2 pb-3 border-bottom-1" href="#">
+                            Mesaj
+                            <span class="badge badge-success ml-auto p-1">8</span>
+                        </a>--%>
+                            <a class="dropdown-item aText2 pt-3 pb-3 borderRadiusLattest" href="girisYap.aspx">Çıkış
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mr-2">
+                        <span class="hidden-xs">
+                            <asp:Label ID="lblKullanici" runat="server" Text=""></asp:Label>
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-bgc-2">
+                <ul class="pl-0 pt-3 liText-d-b">
+                    <li class="liText">
+                        <a class="nav-link aText" href="musteriKayit.aspx">Müşteri Kayıt ve Liste</a>
+                    </li>
+                    <li class="liText">
+                        <a class="nav-link aText" href="musteriGorusmeListesi.aspx">Müşteri Görüşme Listesi</a>
+                    </li>
+                    <li class="liText">
+                        <a class="nav-link aText" href="musteriSozlesmeListesi.aspx">Müşteri Sözleşme Listesi</a>
+                    </li>
+                    <%-- <li class="liText">
+                    <a class="nav-link aText" href="ajanda.aspx">Ajanda</a>
+                </li>    --%>
+                    <li class="liText">
+                        <a class="nav-link aText" href="BorcListe.aspx">Genel Müşteri Borç Listesi</a>
+                    </li>
+                    <%if (Convert.ToInt32(Session["kulid"]).Equals(12))
+                        { %>
+                   <%-- <li class="liText">
+                        <a class="nav-link aText" href="#">Satış Temsilcisi Değişim</a>
+                    </li>--%>
+                       <% } %>
+                    
+                </ul>
+            </div>
+
+        </header>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <script type="text/JavaScript" src="./js/selectOptions.js"></script>
+        <script src="js/moment.min.js"></script>
+        <script src="js/jquery.3.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script type="text/JavaScript" src="js/jquery.dataTables.min.js"></script>
+        <script type="text/JavaScript" src="js/dataTables.bootstrap4.min.js"></script>
+        <script type="text/JavaScript" src="js/dataTables-Turkish.js"></script>
+        <script type="text/JavaScript" src="js/clickshowch.js"></script>
+        <script type="text/JavaScript" src="js/jquery.mask.min.js"></script>
+        <script>
+            $('.money').mask("#.##0,00", { reverse: true });
+
+            //$(".mnyChange").change(function () {
+            //    var selected = $(this).val();
+            //    if (selected === "Euro" || selected === "USD") {
+            //        $('.money').mask("#,##0.00", { reverse: true });
+
+            //    } else {
+            //        $('.money').mask("#.##0,00", { reverse: true });
+            //    }
+            //});
+
+            //$(".paraBirikimi").on(function () {
+            //    var chngMoney = $(this).text();
+            //    if (chngMoney === "Euro") {
+            //        $('.money').mask("#,##0.00", { reverse: true });
+            //    } else {
+            //        $('.money').mask("#.##0,00", { reverse: true });
+            //    }
+            //});
+
+
+        </script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script>
+            $(function () {
+                $(".tarih").datepicker({
+                    changeMonth: true,
+                    changeYear: true,
+                    yearRange: '2018:2030',
+                    monthNames: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos",
+                        "Eylül", "Ekim", "Kasım", "Aralık"],
+                    monthNamesShort: ['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki',
+                        'Kas', 'Ara'],
+                    dayNamesMin: ["Pa", "Pt", "Sl", "Ça", "Pe", "Cu", "Ct"],
+                    dateFormat: 'dd.mm.yy',
+                    firstDay: 1
+                });
+            });
+        </script>
+        <script src="js/jQuery.print.min.js"></script>
+        <script src="js/fullcalendar.min.js"></script>
+        <script src="js/calendar-tr.js"></script>
+        <script src="js/ajanda-data.js"></script>
+        <script src="js/onaylama2.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.openCard').click(function () {
+                    $('.popup-nw').css('display', 'flex');
+                });
+                $('.closeIcon').click(function () {
+                    $('.popup-nw').css('display', 'none');
+                });
+                $('#closeBtn').click(function () {
+                    $('.popup-nw').css('display', 'none');
+                });
+            })
+        </script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#btnNot").click(function () {
+                    $.ajax({
+                        url: 'musteriGorusmeListesi.aspx/NotuCek',
+                        dataType: 'json',
+                        type: 'POST',
+                        data: 'not',
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (data) {
+                            alert(data.d);
+                        }
+                    });
+                });
+            });
+        </script>
+
+
+
+        <script>
+            $(document).ready(function () {
+
+                //$('.sozlesmeTarih-hata').focusout(function () {
+                //    if ($(this).val() == '') {
+                //        $(this).css("border-color", "rgb(247, 51, 51)");
+                //        $('.manEkle-hata').attr('disabled', true);
+                //        e.preventDefault();
+                //    } else {
+                //        $(this).css("border-color", "rgb(32, 191, 44)");
+                //    }
+                //});
+
+                //$('.taksitTarih-hata').focusout(function () {
+                //    if ($(this).val() == '') {
+                //        $(this).css("border-color", "rgb(247, 51, 51)");
+                //        $('.manEkle-hata').attr('disabled', true);
+                //        e.preventDefault();
+                //    } else {
+                //        $(this).css("border-color", "rgb(32, 191, 44)");
+                //    }
+                //});
+
+                $('.taksitMeblag-hata').keyup(function () {
+                    if ($(this).val() == '') {
+                        $(this).css("border-color", "rgb(247, 51, 51)");
+                        $('.manEkle-hata').attr('disabled', true);
+                        $('.otoEkle-hata').attr('disabled', true);
+                        e.preventDefault();
+                    } else {
+                        $(this).css("border-color", "rgb(32, 191, 44)");
+                    }
+
+                    $('.manEkle-hata').attr('disabled', false);
+                    if ($('.taksitMeblag-hata').val().length >= 3) {
+                        $(this).css("border-color", "rgb(32, 191, 44)");
+                    } else {
+                        $(this).css("border-color", "rgb(247, 51, 51)");
+                        $('.manEkle-hata').attr('disabled', true);
+                    }
+
+                    $('.otoEkle-hata').attr('disabled', false);
+                    if ($('.taksitMeblag-hata').val().length >= 3) {
+                        $(this).css("border-color", "rgb(32, 191, 44)");
+                    } else {
+                        $(this).css("border-color", "rgb(247, 51, 51)");
+                        $('.otoEkle-hata').attr('disabled', true);
+                    }
+                });
+
+
+                $('.manEkle-hata').click(function () {
+                    //if ($(".sozlesmeTarih-hata").val() == '') {
+                    //    $(".sozlesmeTarih-hata").css("border-color", "rgb(247, 51, 51)");
+                    //    $('.manEkle-hata').attr('disabled', true);
+                    //} else {
+                    //    $(".sozlesmeTarih-hata").css("border-color", "rgb(32, 191, 44)");
+                    //    $('.manEkle-hata').attr('disabled', false);
+                    //}
+
+                    //if ($(".taksitTarih-hata").val() == '') {
+                    //    $(".taksitTarih-hata").css("border-color", "rgb(247, 51, 51)");
+                    //    $('.manEkle-hata').attr('disabled', true);
+                    //}
+
+                    if ($(".taksitMeblag-hata").val() == '0') {
+                        $(".taksitMeblag-hata").css("border-color", "rgb(247, 51, 51)");
+                        $('.manEkle-hata').attr('disabled', true);
+                    }
+
+                });
+
+                $('.otoEkle-hata').click(function () {
+                    if ($(".taksitMeblag-hata").val() == '0') {
+                        $(".taksitMeblag-hata").css("border-color", "rgb(247, 51, 51)");
+                        $('.otoEkle-hata').attr('disabled', true);
+                    }
+                });
+
+
+                $('.textPwdOld').keyup(function () {
+                    if ($(this).val() == '') {
+                        $(this).css("border-color", "rgb(247, 51, 51)");
+                        $('.btnPwdDegis').attr('disabled', true);
+                        e.preventDefault();
+                    } else {
+                        $(this).css("border-color", "rgb(32, 191, 44)");
+                    }
+
+                    $('.btnPwdDegis').attr('disabled', false);
+                    if ($('.textPwdOld').val().length >= 6) {
+                        $(this).css("border-color", "rgb(32, 191, 44)");
+                    } else {
+                        $(this).css("border-color", "rgb(247, 51, 51)");
+                        $('.btnPwdDegis').attr('disabled', true);
+                    }
+                });
+
+                $('#errorPwdNew').css('display', 'none');
+
+                $('.textPwdNew').keyup(function () {
+                    if ($(this).val() == '') {
+                        $(this).css("border-color", "rgb(247, 51, 51)");
+                        $('.btnPwdDegis').attr('disabled', true);
+                        e.preventDefault();
+                    } else {
+                        $(this).css("border-color", "rgb(32, 191, 44)");
+                    }
+
+                    $('.btnPwdDegis').attr('disabled', false);
+                    if ($('.textPwdNew').val().length >= 6) {
+                        $(this).css("border-color", "rgb(32, 191, 44)");
+                        $('#errorPwdNew').css('display', 'none');
+                    } else {
+                        $(this).css("border-color", "rgb(247, 51, 51)");
+                        $('.btnPwdDegis').attr('disabled', true);
+                        $('#errorPwdNew').css('display', 'block');
+                        $('#errorPwdNew').text(' Girdiğiniz şifre en az 6 karakterden oluşmalı.');
+                        $('#errorPwdNew').addClass('pswdChng-abs');
+                    }
+                });
+
+                $('#errorPwdNew2').css('display', 'none');
+
+                $('.textPwdNew2').keyup(function () {
+                    if ($(this).val() == '') {
+                        $(this).css("border-color", "rgb(247, 51, 51)");
+                        $('.btnPwdDegis').attr('disabled', true);
+                        e.preventDefault();
+                    } else {
+                        $(this).css("border-color", "rgb(32, 191, 44)");
+                    }
+
+                    $('.btnPwdDegis').attr('disabled', false);
+                    if ($('.textPwdNew2').val() === $('.textPwdNew').val()) {
+                        $(this).css("border-color", "rgb(32, 191, 44)");
+                        $('#errorPwdNew2').css('display', 'none');
+                    } else {
+                        $(this).css("border-color", "rgb(247, 51, 51)");
+                        $('.btnPwdDegis').attr('disabled', true);
+                        $('#errorPwdNew2').css('display', 'block');
+                        $('#errorPwdNew2').text(' Girdiğiniz yeni parolada eşitlik sağlanamadı.');
+                        $('#errorPwdNew2').addClass('pswdChng-abs');
+                    }
+                });
+
+
+                $('.btnPwdDegis').click(function () {
+                    if ($(".textPwdOld").val() == '') {
+                        $(".textPwdOld").css("border-color", "rgb(247, 51, 51)");
+                        $('.btnPwdDegis').attr('disabled', true);
+                    }
+
+                    if ($(".textPwdNew").val() == '') {
+                        $(".textPwdNew").css("border-color", "rgb(247, 51, 51)");
+                        $('.btnPwdDegis').attr('disabled', true);
+                    }
+
+                    if ($(".textPwdNew2").val() == '') {
+                        $(".textPwdNew2").css("border-color", "rgb(247, 51, 51)");
+                        $('.btnPwdDegis').attr('disabled', true);
+                    }
+
+
+
+                });
+
+
+
+            })
+        </script>
+        <script>
+            $(document).ready(function () {
+                $('.cricle-b-icon').click(function () {
+                    $('.cricle-b-icon').toggleClass('t-active');
+                    $('main').toggleClass('m-active');
+                    $('.menu-bgc-2').toggleClass('a-active');
+                    $('.liText-d-b').toggleClass('li-active');
+
+                })
+
+            })
+        </script>
+
+
+
+
+        <asp:ListView ID="ListView1" runat="server">
+        </asp:ListView>
+
+
+
+
+    </form>
+</body>
+</html>

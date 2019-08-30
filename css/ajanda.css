@@ -1,0 +1,99 @@
+.bgc-6 {
+    background: #fff;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, .1);
+    border-radius: 5px;
+}
+
+.bgc-6-h5 {
+    border-left: 2px solid #fab63f;
+    font-size: 17px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, .8);
+}
+
+#calendar {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.fc-unthemed .fc-toolbar .fc-button {
+    height: 2.5rem;
+    padding: 0 1.25rem;
+    outline: none !important;
+    font-size: .9rem;
+}
+
+.fc-unthemed .fc-toolbar .fc-button {
+    border: 1px solid #e5e8eb;
+    background: #f4f6f9;
+    text-shadow: none !important;
+}
+
+.fc-unthemed .fc-toolbar .fc-button:focus,
+.fc-unthemed .fc-toolbar .fc-button:active,
+.fc-unthemed .fc-toolbar .fc-button.fc-state-active {
+    color: #fff;
+    border: 0;
+    background: #7a86ff;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+.fc-unthemed .fc-toolbar h2 {
+    margin-top: .70rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.fc-unthemed .fc-day-grid td:not(.fc-axis) {
+    padding: .5rem .5rem;
+}
+
+.fc-unthemed th.fc-day-header {
+    padding: .70rem .5rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.fc-icon-left-single-arrow:after,
+.fc-icon-right-single-arrow:after {
+    font-weight: normal;
+}
+
+.fc button .fc-icon {
+    top: .05em;
+}
+
+.fc-content {
+    padding: 5px;
+    background: #7a86ff;
+    border-color:#7a86ff;
+}
+
+.fc-content .fc-title {
+    color: rgba(255, 255, 255, .8);                   
+}
+
+.fc-content .fc-time {
+    color: rgba(0, 0, 0, .5);
+}
+
+.fc-event {
+    background-color: #7a86ff;
+    border:1px solid #7a86ff;
+}
+
+.fc-popover .fc-header {
+    padding: 10px 10px;
+}
+
+.fc-day-grid-event {
+    margin: 2px 2px 0;
+    padding: 0 1px;
+}
+
+.fc-unthemed .fc-popover .fc-header .fc-close {
+    color: #666;
+    font-size: .9em;
+    margin-top: 4px;
+}

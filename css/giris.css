@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url('../img/bg/11.png') no-repeat;
+    background-size: cover;
+    font-family: 'Montserrat' sans-serif;
+}
+
+.fixCardLogin {
+    display: flex;
+    height: 100vh;
+    background: rgba(0, 0, 0, .5);   
+}
+
+main {
+    display: flex;
+    flex: 1 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-bg {
+    /* background: white; */
+    background: rgba(255, 255, 255, .7);
+    border-radius: 10px;
+    transition: all .8s;
+    
+}
+
+.login-bg:hover {
+    background: white;    
+}
+
+h4 {
+    font-weight: 700;
+    color: #007f5e;
+    font-family: 'Montserrat' sans-serif;            
+}
+
+tt {
+    font-weight: 600;
+    color: #2b2a29;
+    font-size: 24px;
+    font-family: 'Montserrat' sans-serif;
+}
+a.forgot-link {
+    color: #2f3c4b;
+}
+
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+
+.btn-purple {
+color: #fff;
+border: none;
+background: #7a86ff!important;
+}
+
+.btn-purple:hover {
+color:#fff;
+background:#616fff!important;
+}
+
+.btn {
+padding: .8rem 1.5rem;
+cursor: pointer;
+text-transform: uppercase;
+font-family: "Montserrat",sans-serif;
+font-size: 11px;
+font-weight: 400;
+}
+
+.form-control {
+background: none;
+border: 1px solid rgba(0, 0, 0, .2);    
+}
+
+.form-control:focus {
+box-shadow: none;
+border:1px solid #7a86ff;
+background: none;
+}
